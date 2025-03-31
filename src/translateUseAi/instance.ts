@@ -195,9 +195,9 @@ export class TranslateUseAi {
       const matchResult = text.match(/[\u4e00-\u9fa5]+/)
       if (!matchResult) break
 
-      res.push({ text: matchResult[0], start: matchResult.index || 0 + startIndex })
-      text = text.slice(matchResult.index || 0 + matchResult[0].length)
-      startIndex += matchResult.index || 0 + matchResult[0].length
+      res.push({ text: matchResult[0], start: (matchResult.index || 0) + startIndex })
+      text = text.slice((matchResult.index || 0) + matchResult[0].length)
+      startIndex += (matchResult.index || 0) + matchResult[0].length
     }
 
     return res
