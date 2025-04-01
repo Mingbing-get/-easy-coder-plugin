@@ -1,6 +1,6 @@
 {
   "name": "@easy-coder/plugin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "easy coder 中使用的 vite插件",
   "scripts": {
     "build": "tsc && node ./scripts/createPackageJson.js && node ./scripts/copyTo.js"

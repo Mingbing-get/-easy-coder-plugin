@@ -1,5 +1,5 @@
 const { resolve } = require('path')
-const { readdir, stat, writeFile } = require('fs/promises')
+const { readdir, stat, writeFile, cp } = require('fs/promises')
 const pkg = require(resolve(process.cwd(), 'package.json'))
 
 const distDir = resolve(process.cwd(), 'dist')
@@ -18,6 +18,7 @@ async function main() {
   }
 
   await addMainPackageJson(directories)
+  await cp(resolve(process.cwd(), 'README.md'), resolve(distDir, 'README.md'))
 }
 
 async function addMainPackageJson() {
